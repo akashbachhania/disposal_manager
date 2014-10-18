@@ -1,5 +1,5 @@
 <?php
-//this is done by deepak
+//this is done by 
 include("include/header.php");
 include("include/header_menu.php");
 include("include/slider.php");
