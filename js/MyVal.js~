@@ -1,0 +1,86 @@
+// JavaScript Document
+$(document).ready(function() 
+{
+ $("#frm").validate
+ ({
+  rules:
+  {
+	"firstname":{
+    required: true,     
+    minlength:2
+    },  
+	"lastname":{
+    required: true,     
+    minlength:2
+    },  
+	
+	email:
+	{
+	 required:true,
+	 email:true	
+	},
+    password :{
+	 required:true,
+	 //pattern: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/
+	},
+    cpassword:{
+    equalTo: "#password"
+      }
+	
+	
+ },
+messages:
+{
+	firstname:{
+                 required: "Please provide a First Name",
+                minlength: "Your First Name must be at least 2 characters long"
+    },
+	lastname:{
+                 required: "Please provide a Last Name",
+                minlength: "Your last Name must be at least 2 characters long"
+    },
+	 email:
+	 {
+	 required:"Plese Enter Email address",	
+	 email:"Enter proper Email-Id"
+	 },
+	  password :" Enter Password",
+      cpassword :" Enter Confirm Password Same as Password"
+	 	
+}
+  });		
+});
+
+$(document).ready(function() 
+{
+ $("#login").validate
+ ({
+  rules:
+  {
+	email:
+	{
+	 required:true,
+	minlength:4
+	},
+    password :"required",
+    
+	
+ },
+messages:
+{
+	 email:
+	 {
+	 required:"Plese Enter Email address or User name",	
+	 minlength: "Your User Name must be at least 4 characters long"
+	 },
+	  password :" Enter Password",
+      	
+}
+  });		
+});
+
+
+
+
+
+

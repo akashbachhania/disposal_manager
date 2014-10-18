@@ -1,0 +1,9 @@
+<?php
+//connection file
+include_once("classes/connection.php");
+//main class
+include_once("classes/admin.php");
+include_once("classes/user.php");
+//redirect class
+include_once("classes/redirect.php");
+?>

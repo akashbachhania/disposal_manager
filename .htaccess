@@ -1,0 +1,52 @@
+RewriteEngine On
+#RewriteBase /
+RewriteRule ^home$ index.php [L]
+
+<IfModule mod_rewrite.c>
+ErrorDocument 404 http://localhost/Disposal_manager/404.php
+</IfModule>
+
+#Rules for users
+
+RewriteRule ^aboutus$ aboutus.php [L]
+RewriteRule ^signin$ admin_signin.php [L]
+RewriteRule ^contactus$ contactus.php [L]
+RewriteRule ^forgotPassword$ forgot_password.php [L]
+RewriteRule ^resetPassword/([0-9]+)$ reset_password.php?rand_no=$1 [L]
+
+#Rules for admin section
+RewriteRule ^admin/userprofile$ admin/user_profile.php [L]
+RewriteRule ^admin/info/([0-9]+)/([0-9]+)$ admin/info.php?account_no=$1&roll=$2 [L]
+RewriteRule ^admin/Update/([0-9]+)/([0-9]+)$ admin/update.php?id=$1&roll=$2 [L]
+RewriteRule ^admin/list$ admin/admin_list.php [L]
+RewriteRule ^admin/change_password$ admin/change_password.php [L]
+RewriteRule ^admin/help$ admin/help.php [L]
+RewriteRule ^admin/user_information$ admin/edit_user_information.php [L]
+RewriteRule ^admin/user_profile$ admin/user_profile.php [L]
+RewriteRule ^admin/vendors$ admin/vendors.php [L]
+RewriteRule ^admin/generators$ admin/generators.php [L]
+
+RewriteRule ^admin/add_generators$ admin/add_generators.php [L]
+RewriteRule ^admin/editExsisting_generators$ admin/add_generators.php [L]
+RewriteRule ^admin/suspendedAccount$ admin/suspendedAccount.php [L]
+RewriteRule ^admin/add_new_vendors$ admin/add_new_vendors.php [L]
+RewriteRule ^admin/editExsisting_vendors$ admin/add_new_vendors.php [L]
+RewriteRule ^admin/suspendAccount$ admin/suspendedAccount_vendors.php [L]
+RewriteRule ^admin/Global_Settings$ admin/add_generators.php [L]
+RewriteRule ^admin/globle_setting_generator/([0-9]+)/([0-9]+)$ admin/globle_setting_generator.php?id=$1&roll=$2 [L]
+RewriteRule ^admin/Global_Setting$ admin/add_new_vendors.php [L]
+RewriteRule ^admin/globle_setting_vendors/([0-9]+)/([0-9]+)$ admin/globle_setting_vendor.php?id=$1&roll=$2 [L]
+
+#Rules for generators section
+RewriteRule ^generators/userprofile$ generators/user_profile.php [L]
+RewriteRule ^generators/sites$ generators/sites.php [L]
+RewriteRule ^generators/manifests$ generators/manifests.php [L]
+RewriteRule ^generators/Update$ generators/update.php [L]
+RewriteRule ^generators/change_password$ generators/change_password.php [L]
+RewriteRule ^generators/sites$ generators/sites.php [L]
+RewriteRule ^generators/addNewsites$ generators/addNewsites.php [L]
+RewriteRule ^generators/editExistingSites$ generators/editExistingSites.php [L]
+RewriteRule ^generators/manifests$ generators/manifests.php [L]
+RewriteRule ^generators/manifests_upload_page$ generators/manifests_upload_page.php [L]
+RewriteRule ^generators/manifests_search_page$ generators/manifests_search_page.php [L]
+

@@ -1,0 +1,262 @@
+
+.header{margin:20px 0 20px 0; border-top:1px solid #ebebeb; display:block; width:100%; float:left;}
+.navbar-right{margin:15px 0 0 0;}
+.navbar-right li a{color:#333;}
+.navbar-right li a:hover{background-color:#E91B23;color:#333;}
+.slider{margin:20px 0 20px 0; width:100%; float:left;}
+.item h2{
+    margin: 0;     
+    color: #666;
+    padding-top: 90px;
+    font-size: 52px;
+    font-family: "trebuchet ms", sans-serif;    
+}
+.item{
+    background: #333;    
+    text-align: center;
+    height: 450px !important;
+}
+.bannerCntr{margin:120px 0 0 0;}
+.carousel-inner > .item > img, .carousel-inner > .item > a > img {height: 450px !important;}
+.carousel{
+    margin-top: 0px;
+}
+.grating-idea{padding:0 0 30px 0; border-bottom:1px solid #ebebeb; margin:0 0 20px 0; float:left;}
+.navbar-inverse{background-color: #419BD3;    border-color: #2F8FCB;    color: #FFFFFF;}
+.idea{margin:20px 0 0 0;}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #fff;
+}
+.form-control{background-color:#000;}
+
+.thumb-img{text-align:center;}
+.thumb-img i{border-radius: 100px;
+    font-size: 34px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    width: 100px;}
+.keyboard{margin:20px 0 0 0;}
+.clientMargin	{margin:80px 0 0 0;}
+.clientMargin p{font-size:14px;line-height:22px;} 
+.thumb-img .fa{display:inline-block}	 
+.thumb-img i{ color:#333;}
+.thumb-img i:hover{background-color:#419BD3; color:#fff;}
+p {
+    margin: 0 0 6px;
+}
+.teamSec h5{margin-bottom:6px;}
+.teamSec em{color:#777; font-size:14px;}
+.portfolioSec{ background: url("../images/bgimg.jpg") no-repeat scroll center center / cover rgba(0, 0, 0, 0);
+    padding-top: 30px;
+    min-height: 700px;
+    /*padding-top: 120px;margin-top: -50px;*/
+    text-align: center;position:relative;
+    width: 100%;}
+.footerSec{background-color:#000; padding:5px 0;}
+.back-to-top {
+    bottom: 5px;
+    cursor: pointer;
+    opacity: 1;
+    position: fixed;
+    right: 5px;
+}
+
+
+
+
+
+/* simple */
+.flip-container {
+			-webkit-perspective: 1000;
+			-moz-perspective: 1000;
+			-ms-perspective: 1000;
+			perspective: 1000;
+
+			-ms-transform: perspective(1000px);
+			-moz-transform: perspective(1000px);
+    			-moz-transform-style: preserve-3d; 
+    			-ms-transform-style: preserve-3d; 
+
+			border: 1px solid #ccc;
+		}
+
+			/*
+			.flip-container:hover .flipper, .flip-container.hover .flipper, #flip-toggle.flip .flipper {
+				-webkit-transform: rotateY(180deg);
+				-moz-transform: rotateY(180deg);
+				-ms-transform: rotateY(180deg);
+				transform: rotateY(180deg);
+				filter: FlipH;
+    			-ms-filter: "FlipH";
+			}
+			*/
+
+
+			/* START: Accommodating for IE */
+.flip-container:hover .back, .flip-container.hover .back {
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+}
+
+.flip-container:hover .front, .flip-container.hover .front {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+		
+		/* END: Accommodating for IE */
+
+.flip-container, .front, .back {
+			width: 320px;
+			height: 350px;
+		}
+
+.flipper {
+			-webkit-transition: 0.6s;
+			-webkit-transform-style: preserve-3d;
+			-ms-transition: 0.6s;
+
+			-moz-transition: 0.6s;
+			-moz-transform: perspective(1000px);
+			-moz-transform-style: preserve-3d;
+			-ms-transform-style: preserve-3d;
+
+			transition: 0.6s;
+			transform-style: preserve-3d;
+
+			position: relative;
+		}
+
+.front, .back {
+			-webkit-backface-visibility: hidden;
+			-moz-backface-visibility: hidden;
+			-ms-backface-visibility: hidden;
+			backface-visibility: hidden;
+
+		    -webkit-transition: 0.6s;
+		    -webkit-transform-style: preserve-3d;
+
+		    -moz-transition: 0.6s;
+		    -moz-transform-style: preserve-3d;
+
+		    -o-transition: 0.6s;
+		    -o-transform-style: preserve-3d;
+
+		    -ms-transition: 0.6s;
+		    -ms-transform-style: preserve-3d;
+
+		    transition: 0.6s;
+		    transform-style: preserve-3d;
+
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+
+.front {
+			-webkit-transform: rotateY(0deg);
+			-ms-transform: rotateY(0deg);
+			background: lightgreen;
+			z-index: 2;
+		}
+
+.back {
+			background: lightblue;
+			-webkit-transform: rotateY(-180deg);
+		    -moz-transform: rotateY(-180deg);
+		    -o-transform: rotateY(-180deg);
+		    -ms-transform: rotateY(-180deg);
+		    transform: rotateY(-180deg);
+		}
+
+.front .name {
+			font-size: 2em;
+			display: inline-block;
+			background: rgba(33, 33, 33, 0.9);
+			color: #f8f8f8;
+			font-family: Courier;
+			padding: 5px 10px;
+			border-radius: 5px;
+			bottom: 60px;
+			left: 25%;
+			position: absolute;
+			text-shadow: 0.1em 0.1em 0.05em #333;
+			display: none;
+
+			-webkit-transform: rotate(-20deg);
+			-moz-transform: rotate(-20deg);
+			-ms-transform: rotate(-20deg);
+			transform: rotate(-20deg);
+		}
+
+.back-logo {
+			position: absolute;
+			top: 10px;
+			left: 35px;
+			width: 235px;
+			height: 164px;
+			background: url(../images/logo.jpg) 0 0 no-repeat;
+		}
+
+.back-title {
+			font-weight: bold;
+			color: #00304a;
+			position: absolute;
+			top: 180px;
+			left: 0;
+			right: 0;
+			text-align: center;
+			text-shadow: 0.1em 0.1em 0.05em #acd7e5;
+			font-family: Courier;
+			font-size: 1.5em;
+		}
+
+.back p {
+			position: absolute;
+			bottom: 16px;
+			left: 0;
+			right: 0;
+			text-align: center;
+			padding: 0 20px;
+		}
+		
+.btnReadMore{background-color:#A1C12F; color:#fff; font-size:18px;padding:15px 25px; text-align:center; position:absolute; top:10px; right:0px;}
+.btnReadMore:hover{background-color:#419BD3; text-decoration:none;color:#fff;}
+.scrollDiv{width:100%; height:350px; overflow:scroll;}
+.portfolioTitle{ background-color:#ddd; display:block; color:#333; line-height:40px; font-size:25px;}
+
+.addressSec{background:#F5F5F2;padding:10px;}
+.addressSec h2{color:#369FC9;}
+.addressSec address{margin-bottom:0px;margin-top:15px; font-style:italic; line-height:18px; text-indent:15px;}
+.addressSec address h2{color: #333333; font-size: 16px;margin: 5px 0 0;font-style:normal;}
+.addressSec address p{color: #333333; font-size: 16px;margin: 5px 0 0;}
+.mail{margin: 20px 0 0;}
+.mail strong {color: #333333;font-size: 16px;font-weight: bold;margin: 0 10px 0 0;font-style:normal;}
+.mailid {color: #2A84CD;text-decoration: none;}
+.map {
+    border: 1px solid #000000;
+    height: 200px;
+    margin: 30px 0 0;
+}
+
+
+.amazon_scroller_mask link{
+    
+    background-color: black;
+}
+
+
+
+
+
+
+
+
+
+

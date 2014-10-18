@@ -1,0 +1,87 @@
+<?php
+require_once 'init.php';
+class Admin
+{
+	private $dbh;
+	private $redirect;
+	private static $instance=NULL;
+	function __construct()
+	{
+		$dbObject = DatabaseConnection::getInstance();
+		$this->_dbh = $dbObject->getConnection();
+		$this->_redirect = URLRedirect::getInstance();
+	}
+	//get object of current class...
+	public static function getInstance()
+	{ 
+	    if( self::$instance === NULL )
+	    { 
+		   self::$instance = new self();
+	    }
+	    return self::$instance;
+	}
+	// manage login functionality......
+	public function login($array) {
+		try {
+			$email=$array['email'];
+			$password=md5($array['password']);
+			$sql = "select * from users where email = '$email' or username='$email' ";
+			$res=$this->_dbh->query($sql);
+			$value= $res->fetch();
+			
+				if(($array['email']==$value['email'] or $array['email']==$value['username']) and ($value['type']=='admin' and md5($array['password'])==($value['password'])))
+				{
+					die("admin  is call");
+				}
+				else if(($array['email']==$value['email'] or $array['email']==$value['username']) and ($value['type']=='provider' and md5($array['password'])==($value['password'])))
+
+				{
+					die("provider is call");
+				}
+				else if(($array['email']==$value['email'] or $array['email']==$value['username']) and ($value['type']=='generator' and md5($array['password'])==($value['password'])))
+				{
+					die("generator is call");
+				}
+				else{
+				//alert when username/email or password is incorrect
+				?>
+				<script>
+				  alert("invalid user name or password");
+				</script>
+				<?php	
+				}
+			}
+		catch(PDOException $e) {
+			echo $e->getMessage();
+		}
+	}
+
+	// manage Register Functionality......
+	public function register($array){
+		try{
+			$email=$array['email'];
+			$sql = "select * from users where email = '$email' ";
+			$res=$this->_dbh->query($sql);
+			$value= $res->fetch();
+			if($value['email']==$array['email'])
+			{ ?>
+				<script>alert("This User name is already exsist !! Plsese try Diffrent Email ");</script>
+			<?php 
+			}
+			else
+			{
+				$count = $this->_dbh->exec("INSERT INTO users(firstname,lastname,email,password) VALUES ('".$array['firstname']."','".$array['lastname']."','".$array['email']."','".md5($array['password'])."')"); 
+				if($count)
+				{
+						$this->_redirect->redirect("index.php");
+				}
+							}
+			
+		}catch(PDOException $e){
+			echo $e->getMessage();
+			}
+		
+		
+		}
+	
+}

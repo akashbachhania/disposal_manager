@@ -1,0 +1,27 @@
+RewriteEngine On
+#RewriteBase /
+RewriteRule ^home$ index.php [L]
+
+<IfModule mod_rewrite.c>
+ErrorDocument 404 http://localhost/Disposal_manager/404.php
+</IfModule>
+
+#Rules for users
+
+RewriteRule ^aboutus$ aboutus.php [L]
+RewriteRule ^signin$ admin_signin.php [L]
+RewriteRule ^contactus$ contactus.php [L]
+
+#Rules for admin section
+RewriteRule ^admin/info/([0-9]+)/([0-9]+)$ admin/info.php?account_no=$1&roll=$2 [L]
+RewriteRule ^admin/update/([0-9]+)/([0-9]+)$ admin/update.php?id=$1&roll=$2 [L]
+RewriteRule ^admin/list$ admin/admin_list.php [L]
+RewriteRule ^admin/change_password$ admin/change_password.php [L]
+RewriteRule ^admin/help$ admin/help.php [L]
+
+#Rules for generators section
+RewriteRule ^generators/userprofile$ generators/user_profile.php [L]
+RewriteRule ^generators/sites$ generators/sites.php [L]
+RewriteRule ^generators/manifests$ generators/manifests.php [L]
+RewriteRule ^generators/update$ generators/update.php [L]
+RewriteRule ^generators/change_password$ generators/change_password.php [L]
