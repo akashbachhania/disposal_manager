@@ -1,4 +1,5 @@
 <?php
+//this is first page of project
 include("include/header.php");
 include("include/header_menu.php");
 include("include/slider.php");
